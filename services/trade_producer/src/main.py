@@ -60,8 +60,12 @@ def produce_trades(
 
 if __name__ == '__main__': # it means, if this script is the entry point, run below
     # below is the section that runs when executing this file on command line
+    # can use pydantic settings to write your own config ettings
+
+    from src.config import config
+
     produce_trades(
-        kafka_broker_address='localhost:19092',
-        kafka_topic='trade',
-        product_id="ETH/USD",
+        kafka_broker_address=config.kafka_broker_address,
+        kafka_topic=config.kafka_topic,
+        product_id=config.product_id,
     )
