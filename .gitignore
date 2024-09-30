@@ -2,3 +2,4 @@ base.cpython-312.pyc
 kraken_websocket.cpython-312.pyc
 trade.cpython-312.pyc
 **init**.cpython-312.pyc
+services/trade_producer/src/__pycache__/config.cpython-312.pyc
