@@ -3,6 +3,8 @@ name: redpanda-owl-shop
 networks:
   redpanda_network:
     driver: bridge
+    # define a name so that it is user defined
+    name: redpanda_network 
 volumes:
   redpanda: null
 services:
