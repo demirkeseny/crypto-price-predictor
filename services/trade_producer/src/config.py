@@ -10,3 +10,17 @@ class AppConfig(BaseSettings):
         env_file = ".env"
     
 config = AppConfig()
+
+# from pydantic_settings import BaseSettings
+# from typing import List
+
+# class AppConfig(BaseSettings):
+
+#     kafka_broker_address: str
+#     kafka_topic: str
+#     product_ids: List[str]
+
+#     class Config:
+#         env_file = ".env"
+    
+# config = AppConfig()
