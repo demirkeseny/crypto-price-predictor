@@ -1,6 +1,8 @@
+from datetime import timedelta
+from typing import Any, List, Tuple, Optional
+
 from quixstreams import Application
 from loguru import logger
-from datetime import timedelta
 
 
 def init_ohlcv_candle(
@@ -93,10 +95,12 @@ def transform_trade_to_ohlcv(
 # define python pre-emble
 if __name__ == "__main__":
 
+    from src.config import config
+
     transform_trade_to_ohlcv(
-        kafka_broker_address='localhost:19092',
-        kafka_input_topic='trade',
-        kafka_output_topic='ohlcv',
-        kafka_consumer_group='consumer_group_trade_to_ohlcv_2',
-        ohlcv_window_seconds=60,
+        kafka_broker_address=config.kafka_broker_address, #'localhost:19092',
+        kafka_input_topic=config.kafka_input_topic, #'trade',
+        kafka_output_topic=config.kafka_output_topic, #'ohlcv',
+        kafka_consumer_group=config.kafka_consumer_group,  #'consumer_group_trade_to_ohlcv',
+        ohlcv_window_seconds=config.ohlcv_window_seconds, #60,
     )
